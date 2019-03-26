@@ -1,0 +1,25 @@
+
+$red: #e01b21;
+$gray: #3c3f42;
+
+$calc-size: 30 !default;
+$width-unit: 100vw/$calc-size !default;
+
+//
+$primary:       $red;
+$light:         #f7f9f8;
+$dark:          $gray;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Roboto', sans-serif;
+$font-family-monospace:       'Roboto Mono', monospace;
+
+$header-height: 60px !default;
+$header-height-sm: 80px !default;
+$header-height-md: 80px !default;
+$header-height-lg: 80px !default;
+$header-height-xl: 80px !default;

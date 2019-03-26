@@ -1,0 +1,33 @@
+{
+  "Contact Us": "Kontaktirajte nas",
+  "Location": "Lokacija",
+  "footerCopy": "&copy; Copyright - WRPM d.o.o.",
+  "Language": "Jezik",
+  "locales": {
+    "en_US": "EN",
+    "sr_RS": "SR"
+  },
+  "contactForm": {
+    "name": {
+      "label": "Ime",
+      "placeholder": "Vaše ime"
+    },
+    "company": {
+      "label": "Kompanija",
+      "placeholder": "Ime vaše kompanije"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Email adresa"
+    },
+    "phone": {
+      "label": "Telefon",
+      "placeholder": "Broj telefona"
+    },
+    "message": {
+      "label": "Poruka",
+      "placeholder": "Vaša poruka"
+    }
+  },
+  "contactFormBtnLabel": "Pošalji"
+}

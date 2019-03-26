@@ -1,0 +1,34 @@
+{
+  "Contact Us": "Contact Us",
+  "Location": "Location",
+  "footerCopy": "&copy; Copyright - WRPM d.o.o.",
+  "Language": "Language",
+  "locales": {
+    "en_US": "EN",
+    "sr_RS": "SR"
+  },
+  "contactForm": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name"
+    },
+    "company": {
+      "label": "Company",
+      "placeholder": "Name of your company"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Email adress"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Phone number"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Your message"
+    }
+  },
+  "contactFormBtnLabel": "Send"
+  
+}
