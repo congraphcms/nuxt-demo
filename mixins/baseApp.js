@@ -6,6 +6,7 @@ import metaConfig from '@/config/meta'
 import MetaHelper from '@/utils/cms/metaHelper'
 import getLocaleFromRoute from '@/utils/cms/getLocaleFromRoute'
 import { has, isString } from 'lodash'
+import { mapState } from 'vuex'
 
 const baseApp = {
   watch: {
@@ -13,7 +14,15 @@ const baseApp = {
       if (!val) return
       this.$store.dispatch('app/SET_STATE', { activePage: val })
       this.$store.dispatch('UPDATE_ACTIVE_PAGE_TRANSLATIONS')
-    }
+    },
+    loaders(val) {
+      this.$store.dispatch('app/SET_STATE', {
+        appLoaded: this.pageLoaded && this.dataLoaded
+      })
+    },
+    // dataLoaded(val) {
+    //   console.log("something changed", this.pageLoaded, this.dataLoaded)
+    // }
   },
   created() {
     const self = this
@@ -49,6 +58,23 @@ const baseApp = {
     window.addEventListener('resize', this.resizeHandler, true)
   },
   computed: {
+    appLoaded() {
+      return this.$store.getters['app/getState']('appLoaded')
+    },
+    pageLoaded() {
+      return this.$store.getters['app/getState']('pageLoaded')
+    },
+    dataLoaded() {
+      return this.$store.getters['app/getState']('dataLoaded')
+    },
+    loaders() {
+      // it's only required to reference those properties
+      // this.appLoaded;
+      
+      
+      // and then return a different value every time
+      return this.dataLoaded, this.pageLoaded, Date.now() // or performance.now()
+    },
     locale() {
       return this.$store.getters.locale
     },

@@ -13,6 +13,11 @@
         <app-footer />
       </div>
     </smooth-scroll>
+    <custom-transition :delay=".4" :pageTransition="true">
+      <logo-loader
+        v-if="!appLoaded"/>
+    </custom-transition>
+    <div class="appLoaded" v-html="appLoaded+','+pageLoaded+','+dataLoaded"/>
   </div>
 </template>
 
@@ -28,6 +33,8 @@ import AppMainMenu from '@/components/app/AppMainMenu'
 import AppFooter from '@/components/app/AppFooter'
 import CustomTransition from '@/components/transitions/CustomTransition'
 
+import LogoLoader from '@/components/loaders/LogoLoader'
+
 export default {
   mixins: [
     baseApp,
@@ -39,6 +46,7 @@ export default {
     AppHeader,
     AppMainMenu,
     AppFooter,
+    LogoLoader,
     CustomTransition
   },
   data:() => ({
@@ -65,9 +73,9 @@ export default {
       return this.$store.getters["app/getState"]("scrollTop") > 30
     }
   },
-  mounted() {
+  async mounted() {
     const self = this
-    self.$nextTick(() => {
+    self.$nextTick(async () => {
       self.resizeHandler()
 
       if(!self.$store.getters['entities/hasAllLocales']) {
@@ -78,8 +86,10 @@ export default {
 
     if (!this.entities.length) {
       // console.warn("API fetch didn't finish on server side")
-      this.$store.dispatch('entities/LOAD_ENTITIES', this.$store.getters.Locale)
+      await this.$store.dispatch('entities/LOAD_ENTITIES', this.$store.getters.Locale)
     }
+
+    this.$store.dispatch('app/SET_STATE', { dataLoaded: true })
     // this.showCookie = !cookies.get('showCookie')
   },
   methods: {

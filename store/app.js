@@ -22,6 +22,9 @@ export const state = () => ({
    * @type {Object}
    */
   activePage: null,
+  appLoaded: false,
+  pageLoaded: false,
+  dataLoaded: false,
   firstInit: true,
   transitioning: false,
   instantTransition: false,

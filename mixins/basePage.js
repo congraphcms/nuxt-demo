@@ -31,6 +31,10 @@ const basePage = {
       scrollTop: 0
     })
 
+    this.$store.dispatch('app/SET_STATE', {
+      pageLoaded: true
+    })
+
     this.$nextTick(() => {
       this.resizeHandler()
     })
