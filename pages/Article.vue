@@ -26,7 +26,7 @@
 
 <script>
 import basePage from '@/mixins/basePage'
-import postModelMixin from '@/mixins/cms/postModel'
+import postModelMixin from '@/mixins/cms/PostModel'
 
 export default {
 	name: 'Article',

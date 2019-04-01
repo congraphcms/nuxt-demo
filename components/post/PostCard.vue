@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import postModelMixin from '@/mixins/cms/postModel'
+import postModelMixin from '@/mixins/cms/PostModel'
 
 export default {
 	name: 'PostCard',
